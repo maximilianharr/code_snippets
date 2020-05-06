@@ -1,0 +1,13 @@
+
+# Initialization
+  git clone //Rusisi01/cat/EE-ACTIVE-SAFETY/PEEVE-INTERN/06-Doktoranden/Harr/OPEL_Workspace OPEL_Workspace
+  git config --global core.autocrlf false
+  git config --global user.name Max Mustermann
+  git config --global user.mail max.mustermann@opel.com
+  # update .git/info/exclude
+
+# Replace CRLF 
+  find . -type f -exec sed -i 's/\r//g' {} +
+  
+  
+  

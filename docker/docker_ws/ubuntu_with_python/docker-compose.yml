@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  ubuntu_con:
+    image: maximilianharr/ubuntu-with-python:latest # Use Ubuntu image with Python installed
+    ports: 
+      - '8080:80' # Expose port 8080 on host and send to port 80 in container
+    volumes: 
+      - ./:/home/playground # Create a bind mount
+

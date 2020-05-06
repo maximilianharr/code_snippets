@@ -1,0 +1,47 @@
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INTRODUCTION
+
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BUG LIST
+% example:
+%\begin{bug}{}{}
+%	\caption{: desription}
+%  Solution:\\
+%  solution
+%  Link: \href{}{\link{<optional>}}\\
+%\end{bug}
+
+\subsection{ QInotifyFileSystemWatcherEngine::addPaths: inotify\_add\_watch failed: No space left on device }
+\begin{bug}{}{}
+	\caption{: Error message is due to using up all inotify watches.}
+  Solution:\\
+  If \terminal{sysctl fs.inotify.max_user_watches} returns 8192\\
+  Then type: \terminal{sudo sysctl fs.inotify.max_user_watches=65536}.\\
+  Link: \href{https://savannah.gnu.org/bugs/?43182}{\link{link}}\\
+\end{bug}
+
+\subsection{ genmsg.msg\_loader.MsgNotFound: Cannot locate message [Header]: unknown package [std\_msgs] on search path }
+\begin{bug}{}{}
+	\caption{: .}
+  Solution: Problem with ROSJava messages and rosbag > Remove files or republish from CPP-Node.\\
+  Apparently there is a bug in ROSJava (eg. when using an android node that publishes sensor messages) in combination with rosbag. There are two (poor) workarounds. One is to launch the bagfile and subscribe to only the topic from CPP nodes. Another is to write an efficient CPP-subscriber and publisher that receives topics from Java node and republishes them.\\
+  Link: \href{http://answers.ros.org/question/58015/cannot-locate-message-multiarraylayout-in-python-ros-bag-api/}{\link{link}}\\
+\end{bug}
+
+\subsection{CMake Error: The current CMakeCache.txt directory ...}
+\begin{bug}{}{}
+	\caption{: .}
+  Solution: \textbf{CMake Error: The current CMakeCache.txt directory /home/vz2mtn/Desktop/buffer/catkin\_ws/build/CMakeCache.txt is different than the directory /home/vz2mtn/catkin\_ws/build where CMakeCache.txt was created}.\\
+Error occured after copying a catkin project to another location and recompiling it. Solved by deleting /build and /devel folder and recompiling 
+(catkin\_make).\\
+  Link: \\
+\end{bug}
+
+
+\subsubsection{ fatal error: opencv2/core.hpp: No such file or directory }
+\begin{bug}{}{}
+	\caption{: .}
+  Solution: When building with \terminal{mrt catkin build}, this helped:\\
+\terminal{sudo find / -name 'core.hpp'}\\
+If core.hpp is in folder 'opencv2/core/core.hpp' then make sure to include with \textbf{\#include <opencv2/core/core.hpp>}.\\
+  Link: \href{Maybee this helps}{\link{http://stackoverflow.com/questions/20901919/error-opencv2-core-core-c-h-no-such-file-or-directory}}\\
+\end{bug}
+

@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+message loc{
+  required double a = 1;
+  required float  b = 2;
+  required int32  c = 3;
+  required int64  d = 4;
+  required uint32 e = 5;
+  required uint64 f = 6;
+  required sint32 g = 7;
+  required sint64 h = 8;
+  required fixed32 i = 9;
+  required fixed64 j = 10;
+  required bool k = 11;
+  required string l = 12;
+}

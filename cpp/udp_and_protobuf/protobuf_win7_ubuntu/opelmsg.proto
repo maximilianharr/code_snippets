@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message opelMsg {
+  optional string member = 1;
+  required string stream = 2;
+}
+

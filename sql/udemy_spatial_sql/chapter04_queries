@@ -1,0 +1,4 @@
+﻿SELECT *
+INTO qlayer
+FROM parcels
+WHERE acres > 44

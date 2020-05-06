@@ -1,0 +1,44 @@
+# Remove old version (if installed with packet manager)
+sudo apt-get remove protobuf-compiler protobuf-c-compiler
+
+# Clone both Protobuf and Protobuf-c (latest version) from Github
+git clone https://github.com/google/protobuf.git
+git clone https://github.com/protobuf-c/protobuf-c.git
+
+
+# INSTALL PROTOBUF FOR C++
+# [https://github.com/google/protobuf/blob/master/src/README.md]
+cd protobuf
+
+# Get tools for building protobuf from source 
+sudo apt-get install autoconf automake libtool curl make g++ unzip
+
+# Build protobuf from source (takes awfully long)
+./autogen.sh
+./configure
+make
+make check
+sudo make install
+sudo ldconfig # refresh shared library cache.
+
+
+# INSTALL PROTOBUF FOR C 
+# [https://github.com/protobuf-c/protobuf-c]
+cd ../protobuf-c
+
+# Get tools for building protobuf-c from source
+sudo apt-get install autoconf automake libtool
+
+# Build protobuf-c from source
+./autogen.sh
+./configure
+make 
+sudo make install
+
+# TESTING
+# protoc --cpp_out=./ test.proto
+# protoc-c --c_out=./ test.proto
+
+# # test.proto:
+# syntax = "proto2";
+# message test{ required uint32 x = 1; }

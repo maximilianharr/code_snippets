@@ -1,0 +1,10 @@
+<!-- wiki.ros.org/roslaunch -->
+<launch>
+
+  <!-- SET PARAMETERS -->
+
+  <!-- LAUNCH IO NODES -->
+  <node pkg="pi_io_handler" type="io_handler.py" name="io_handler"/>
+
+</launch>
+

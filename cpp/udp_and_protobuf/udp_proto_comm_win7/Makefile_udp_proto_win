@@ -1,0 +1,32 @@
+# Project: udp_communication
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+# OBJ      = ./bin/udp_proto_win.o
+# LINKOBJ  = ./bin/udp_proto_win.o
+LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3 -lws2_32 
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"./external"  -I"./external/google"
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = udp_send_proto_win.exe udp_recv_proto_win.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3
+CFLAGS   = $(INCS) -m32 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+	
+#$(BIN): $(OBJ)
+#	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+udp_recv_proto_win.exe: udp_recv_proto_win.c
+	$(CC) udp_recv_proto_win.c ./external/protobuf_header/loc.pb-c.c ./external/google/protobuf-c/protobuf-c.c -o ./bin/udp_recv_proto_win.exe $(LIBS) $(CFLAGS)
+
+udp_send_proto_win.exe: udp_send_proto_win.c
+	$(CC) udp_send_proto_win.c ./external/protobuf_header/loc.pb-c.c ./external/google/protobuf-c/protobuf-c.c -o ./bin/udp_send_proto_win.exe $(LIBS) $(CFLAGS)
+	

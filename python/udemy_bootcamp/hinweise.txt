@@ -1,0 +1,4 @@
+# Hinweise zu Jupiter:
+- Mit m Markdown-Modus
+- Mit y Code-Modus
+- Mit dd löschen

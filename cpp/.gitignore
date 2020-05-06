@@ -1,0 +1,5 @@
+# Files that shall be ignored in this git-repo:
+*/build/*
+*/bin/*
+*.o
+*/cmake/*

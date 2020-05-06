@@ -1,0 +1,13 @@
+<!-- wiki.ros.org/roslaunch -->
+<launch>
+
+  <!-- SET PARAMETERS -->
+
+  <!-- LAUNCH sensor_pi package -->
+  <include file="$(find sensor_pi)/launch/sensor_pi.launch"/>
+
+  <!-- LAUNCH Android-Lights -->
+  <node pkg="action_pi" type="pi_shiftable_plug.py" name="pi_shiftable_plug"/>
+
+</launch>
+

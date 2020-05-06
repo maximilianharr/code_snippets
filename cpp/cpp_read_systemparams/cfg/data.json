@@ -1,0 +1,49 @@
+{
+    "dump" :
+    {   "bool" : false,
+        "file" : "Dudenhofen_dump2"},
+    "cache" :
+    {   "seconds" : 10.0 },
+
+    "freq" :
+    {   "simulation"  : 100.0,
+        "update"      : 20.0,
+        "mapmatching" : 3.0 },
+    "topview" :
+    {   "max_dist" : 20.0 },
+
+    "covariance" :
+    {   "map" :
+        {   "lon"    : 4.0,
+            "lat"    : 0.01,
+            "height" : 1.0 },
+        "odometry" :
+        {   "position"    : 0.1,
+            "orientation" : 0.0175 },
+        "rtklib" :
+        {   "position"    : 5.0,
+            "orientation" : 1000.0 },
+        "topview" :
+        {   "lon"    : 1.0,
+            "lat"    : 2.0,
+            "height" : 10.0     }},
+    "size" :
+    {   "cloud" : 35,
+        "poses" :
+        {   "topview"     : 40,
+            "topview_fix" : 0,
+            "rtklib"      : 20,
+            "rtklib_fix"  : 0 }},
+
+
+    "icp" :
+    {   "map" :
+        {
+            "threshold" : 10.0 },
+        "topview" :
+        {
+            "threshold" : 20.0 }
+    },
+    "fruits" : ["apple", "raspberry", "orange"],
+    "matrix" : [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+}

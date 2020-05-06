@@ -1,0 +1,23 @@
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INTRODUCTION
+
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BUG LIST
+% example:
+%\begin{bug}{}{}
+%	\caption{: desription}
+%  Solution:\\
+%  solution
+%  Link: \href{}{\link{<optional>}}\\
+%\end{bug}
+
+\subsection{ Eigen/Core not found }
+\begin{bug}{}{}
+	\caption{: Include does not work since it is in subdirectory (eg. Eigen/Core vs. eigen3/Eigen/Core)}
+  Solution:\\
+  \link{http://stackoverflow.com/questions/23284473/fatal-error-eigen-dense-no-such-file-or-directory}{\link{stackoverflow}}\\
+  \verb|#include <Eigen/Core>| doesn't work but \verb|#include <eigen3/Eigen/Core>| works.\\
+  Create symlink: \\
+  \terminal{cd /usr/include}\\
+  \terminal{sudo ln -sf eigen3/Eigen Eigen}\\
+
+  Link: \href{}{\link{<optional>}}\\
+\end{bug}

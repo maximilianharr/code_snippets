@@ -1,0 +1,2 @@
+# Replace string in multiple files
+find ./ -type f -exec sed -i 's/foo/bar/g' {} \;

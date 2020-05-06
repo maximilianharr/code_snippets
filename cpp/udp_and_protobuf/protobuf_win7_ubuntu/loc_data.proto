@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+message LocData {
+  required double lat = 1;
+  required double lon = 2;
+  optional int32 valid = 3;
+
+}
+

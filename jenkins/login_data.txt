@@ -1,0 +1,32 @@
+
+Jenkins:
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v jenkins-data:/var/jenkins_home -p 8080:8080 getintodevops/jenkins-withdocker:lts-docker18.06.0
+User: admin
+PW: f6eeada3681a43e9bc1ef2ff654a6c9b
+
+
+node {
+    def app
+
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+        checkout scm
+    }
+
+    stage('Build image') {
+        /* This builds the actual image; synonymous to
+         * docker build on the command line */
+
+        app = docker.build("getintodevops/example-app")
+    }
+
+    stage('Push image') {
+        /* Finally, we'll push the image into Docker Hub */
+
+        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            app.push("latest")
+        }
+    }
+}
+

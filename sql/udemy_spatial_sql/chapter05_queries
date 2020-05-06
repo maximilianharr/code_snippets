@@ -1,0 +1,5 @@
+﻿ -- SELECT * INTO qlayer FROM parcels WHERE acres > 44;
+ -- DROP TABLE qlayer;
+ -- SELECT parcels.* INTO qlayer FROM parcels, firm
+ -- WHERE st_intersects(parcels.geometry, firm.geometry)
+ -- AND firm.zone = 'X'

@@ -1,0 +1,14 @@
+\contentsline {subsection}{\numberline {0.1}example bug}{2}{subsection.0.1}
+\contentsline {section}{\numberline {1}Cpp Bugs}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Eigen/Core not found}{3}{subsection.1.1}
+\contentsline {section}{\numberline {2}GIT Bugs}{4}{section.2}
+\contentsline {section}{\numberline {3}Java Bugs}{5}{section.3}
+\contentsline {section}{\numberline {4}Matlab Bugs}{6}{section.4}
+\contentsline {section}{\numberline {5}Simulink/DSpace Bugs}{7}{section.5}
+\contentsline {section}{\numberline {6}Octave Bugs}{8}{section.6}
+\contentsline {section}{\numberline {7}Python Bugs}{9}{section.7}
+\contentsline {section}{\numberline {8}ROS Bugs}{10}{section.8}
+\contentsline {subsection}{\numberline {8.1}QInotifyFileSystemWatcherEngine::addPaths: inotify\_add\_watch failed: No space left on device}{10}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}genmsg.msg\_loader.MsgNotFound: Cannot locate message [Header]: unknown package [std\_msgs] on search path}{10}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}CMake Error: The current CMakeCache.txt directory ...}{10}{subsection.8.3}
+\contentsline {subsubsection}{\numberline {8.3.1}fatal error: opencv2/core.hpp: No such file or directory}{10}{subsubsection.8.3.1}

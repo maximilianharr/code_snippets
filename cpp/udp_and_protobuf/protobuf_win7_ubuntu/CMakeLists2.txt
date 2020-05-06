@@ -1,0 +1,42 @@
+# Run cmake with:
+#
+# $ cd build
+# $ cmake .. (maybee run this twice)
+# >> create CMake configuration files indside ./build
+# 
+# $ make
+# >> Generate output in ./bin
+
+# Cmake Protobuf support: https://cmake.org/cmake/help/v3.1/module/FindProtobuf.html
+
+# Specify the minimum version for CMake
+cmake_minimum_required(VERSION 2.8)
+
+# Project's name
+project(protbuf_test)
+
+# Bring header files into build environment
+include_directories(build) # Note that protobuf_generate_cpp creates *.pb.cc and *.pb.h in ./build
+include_directories(${PROTOBUF_INCLUDE_DIRS})
+
+# Find protobuf package
+find_package(Protobuf REQUIRED)
+
+# Set the output folder where your program will be created
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
+# The following folder will be included
+include_directories("${PROJECT_SOURCE_DIR}")
+
+PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS ${CMAKE_SOURCE_DIR}/loc_data.proto)
+
+# Set sources
+file(GLOB SOURCES "src/*.cpp")
+
+add_executable(prot_read ${PROJECT_SOURCE_DIR}/prot_read.cpp ${SOURCES} ${PROTO_SRCS} ${PROTO_HDRS} )
+target_link_libraries(prot_read ${PROTOBUF_LIBRARIES})
+
+add_executable(prot_write ${PROJECT_SOURCE_DIR}/prot_write.cpp ${SOURCES} ${PROTO_SRCS} ${PROTO_HDRS} )
+target_link_libraries(prot_write ${PROTOBUF_LIBRARIES})

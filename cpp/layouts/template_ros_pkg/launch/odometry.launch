@@ -1,0 +1,18 @@
+<!-- wiki.ros.org/roslaunch -->
+<launch>
+
+  <!-- Load variables from yaml-file in Parameter Server -->
+  <rosparam command="load" file="$(find sensor_fusion_ros/rosparam.yaml" />
+
+  <!-- SENSOR_OPEL_CAN -->
+  <group ns="sensor">
+    <node pkg="sensor_opel_can_ros_tool" type="sensor_opel_can_node" name="opel_can_grabber"/>
+  </group>
+
+  <!-- SENSOR_UBLOX_ROS_TOOL -->
+  <include file="$(find sensor_ublox_ros_tool)/launch/m8t.launch" />
+
+  <!-- OPEL_CAN_ODOMETRY_ROS_TOOL -->
+  <node pkg="opel_can_odometry_ros_tool" type="rosmsg_grab" name="rosmsg_grab"/>
+</launch>
+

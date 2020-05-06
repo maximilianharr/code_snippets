@@ -1,0 +1,19 @@
+<!-- wiki.ros.org/roslaunch -->
+<launch>
+
+  <!-- Load variables from yaml-file in Parameter Server -->
+  <include file="$(find opel)/launch/misc/load_params.launch" />
+
+  <!-- Select file for rosbag play -->
+  <arg name="bagfile" default="/home/vz2mtn/kohaf_data/bag_files/2016_04_06_Rue/Data_All_2016-04-06-09-50-49.bag" />
+  
+  <param name="use_sim_time" value="true" />
+
+  <!-- Start rosbag. Start at s seconds. -->
+  <node pkg="rosbag" type="play" name="rosbag_play" args="-s 0 $(arg bagfile)"/>
+
+  <!-- OPEL_CAN_ODOMETRY_ROS_TOOL -->
+  <node pkg="opel_can_odometry_ros_tool" type="rosmsg_grab" name="rosmsg_grab" output="screen"/>
+
+</launch>
+

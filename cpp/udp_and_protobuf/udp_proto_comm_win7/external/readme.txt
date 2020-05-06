@@ -1,0 +1,1 @@
+folder google was renamed from protobuf-c-master [download at: https://github.com/protobuf-c/protobuf-c]

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ansible/.idea/ansible.iml" filepath="$PROJECT_DIR$/../ansible/.idea/ansible.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../gsep/.idea/gsep.iml" filepath="$PROJECT_DIR$/../gsep/.idea/gsep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rd_uam.iml" filepath="$PROJECT_DIR$/.idea/rd_uam.iml" />
+    </modules>
+  </component>
+</project>

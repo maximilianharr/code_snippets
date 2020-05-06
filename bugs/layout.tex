@@ -1,0 +1,156 @@
+%\documentclass[10pt,a4paper,twoside]{article}
+\documentclass[11pt,oneside,bibliography=totoc]{scrartcl}
+\usepackage[inner=1.3 cm,outer=1.3 cm,top=2.5cm,bottom=2.0cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref} % makes hyperlinks possible [seems to hyperlink toc automatically :)]
+\usepackage[usenames,dvipsnames]{xcolor} % loads colors
+\usepackage{fancyhdr} % I think this is for the heading line
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{float} % For float boxes
+\makeatletter % allows use of "@" in control sequence names
+\usepackage{nameref} % Used to link sectionname to \currentname
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}\
+% Set the headline to be a hyperlink to the table of contents
+\fancyhead[R]{ \hyperlink{toc}{Table of contents} }
+
+
+
+
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INHALTSVERZEICHNIS
+\hypertarget{toc}{\tableofcontents} % table of contents to be accessed by heading line.
+
+\newpage
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> NOMENKLATUR
+\section*{Nomenclatur}
+
+% Define new command to indicate special input.
+
+% TERMINAL
+\newcommand\terminal{%%
+  \bgroup
+    \catcode`\%=12 % \catcode`\<char>=<number>
+    \catcode`\#=12 % With catcode the letters can be assigned to different groups (0-15)
+    \ae@terminal
+  }
+\def\ae@terminal#1{
+\color{NavyBlue}
+    \texttt{\detokenize{#1}}
+\egroup}
+
+% CPP
+\newcommand\cpp{%%
+  \bgroup
+    \catcode`\%=12 % \catcode`\<char>=<number>
+    \catcode`\#=12 % With catcode the letters can be assigned to different groups (0-15)
+    \af@cpp
+  }
+\def\af@cpp#1{
+\color{ForestGreen}
+    \texttt{\detokenize{#1}}
+\egroup}
+
+% Python
+\newcommand\python{%%
+  \bgroup
+    \catcode`\%=12 % \catcode`\<char>=<number>
+    \catcode`\#=12 % With catcode the letters can be assigned to different groups (0-15)
+    \ag@python
+  }
+\def\ag@python#1{
+\color{Red}
+    \texttt{\detokenize{#1}}
+\egroup}
+
+% GDB
+\newcommand\gdb{%%
+  \bgroup
+    \catcode`\%=12 % \catcode`\<char>=<number>
+    \catcode`\#=12 % With catcode the letters can be assigned to different groups (0-15)
+    \ah@gdb
+  }
+\def\ah@gdb#1{
+\color{Plum}
+    \texttt{\detokenize{#1}}
+\egroup}
+
+% LATEX
+\newcommand\latex{%%
+  \bgroup
+    \catcode`\%=12 % \catcode`\<char>=<number>
+    \catcode`\#=12 % With catcode the letters can be assigned to different groups (0-15)
+    \ai@latex
+  }
+\def\ai@latex#1{
+\color{CornflowerBlue}
+    \texttt{\detokenize{#1}}
+\egroup}
+
+% LINK
+\newcommand\link{%%
+  \bgroup
+    \catcode`\%=12 % \catcode`\<char>=<number>
+    \catcode`\#=12 % With catcode the letters can be assigned to different groups (0-15)
+    \aj@link
+  }
+\def\aj@link#1{
+\color{BurntOrange}
+    \texttt{\detokenize{#1}}
+\egroup}
+
+% XML
+\newcommand\xml{%%
+  \bgroup
+    \catcode`\%=12 % \catcode`\<char>=<number>
+    \catcode`\#=12 % With catcode the letters can be assigned to different groups (0-15)
+    \ak@xml
+  }
+\def\ak@xml#1{
+\color{Brown}
+    \texttt{\detokenize{#1}}
+\egroup}
+
+
+% Examples
+\terminal{This is how a terminal command looks like}\\
+\cpp{This is how a C++ command looks like}\\
+\python{This is how a Python command looks like}\\
+\gdb{This is how a gdb command looks like}\\
+\latex{This is how a latex command looks like}\\
+\link{This is how a link looks like}\\
+\xml{This is how a xml property like}\\
+
+% Tipps:
+% Do not use underscores: "missing $ inserted"-error | 
+%   if necessary write \section{ \terminal{a\_b} } instead of \section{ \terminal{a_b} }
+% 
+
+% Create a 'bug'-Box
+% this creates a custom and simpler ruled box style
+\newcommand\floatc@simplerule[2]{{\@fs@cfont #1 #2}\par}
+\newcommand\fs@simplerule{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@simplerule
+  \def\@fs@pre{\hrule height.8pt depth0pt \kern4pt}%
+  \def\@fs@post{\kern4pt\hrule height.8pt depth0pt \kern4pt \relax}%
+  \def\@fs@mid{\kern8pt}%
+  \let\@fs@iftopcapt\iftrue}
+
+% this code block defines the new and custom floatbox float environment
+\floatstyle{simplerule}
+\newfloat{bug}{thp}{lob}
+\floatname{bug}{Description of}
+
+% Link section name to \currentname
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother

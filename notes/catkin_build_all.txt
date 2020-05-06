@@ -1,0 +1,17 @@
+# Packages
+catkin build -sc -j8 phoenix_middleware planning_full map_all map_learning_full map_diff vehicle_connector start_scripts ros_bag_tools fusion_driving_full
+
+# RVIZ plugins
+catkin build -sc -j8 mops_rviz_plugins fusion_rviz_plugins driving_rviz_plugins
+
+# Fusion
+catkin build -sc -j8 fusion_driving_full
+
+# update system
+sudo apt update
+sudo apt upgrade
+sudo apt dist-upgrade
+
+# update ROS ??? tbc
+rosdep update
+rosdep install -y --reinstall --from-paths ${ATHENA_ROOT}/src/ --ignore-src --rosdistro ${ROS_DISTRO} -r

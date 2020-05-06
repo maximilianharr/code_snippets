@@ -1,0 +1,30 @@
+%!PS-Adobe-2.0
+%%Title: PostScript-Beispiel1
+%%Creator: Martin Gräfe
+%%BoundingBox: 28 28 567 813
+%%Orientation: Portrait
+%%Pages: 1
+%%EndProlog
+
+%%Page: 1
+
+28.35 28.35 scale    % ab hier in Zentimeter umskalieren
+
+7 25 moveto	     % Cursor an Position x=7cm, y=25cm
+
+% Schriftart auf "Helvetica" mit 1cm Höhe:
+/Helvetica 1 selectfont
+
+% Text darstellen:
+(Dies ist ein Test.) show
+
+0.1 setlinewidth     % Liniendicke auf 0,1cm
+
+0 0 1 setrgbcolor    % Farbe Blau
+
+% Linie unter dem Text zeichnen:
+0 -0.2 rmoveto	     % 0,2cm nach unten
+7 24.8 lineto	     % Linie bis zum Textanfang
+stroke		     % Linie zeichnen
+
+showpage	     % gesamte Seite darstellen

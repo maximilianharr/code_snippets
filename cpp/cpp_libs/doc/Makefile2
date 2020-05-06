@@ -1,0 +1,7 @@
+# Makefile
+
+CPP  = g++ -g
+LIBS = -lboost_iostreams -lboost_system -lboost_filesystem
+
+gnuplot_test:  gnuplot_test.cpp
+	       $(CPP) gnuplot_test.cpp -o gnuplot_test.o $(LIBS)

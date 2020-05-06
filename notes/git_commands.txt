@@ -1,0 +1,12 @@
+# Show initial commit of Branch
+git log master..${BRANCH_NAME} --oneline | tail -1
+
+# Show diff of file between branches
+git diff ${BRANCH_NAME} master -- ../common/map_storage_interface/src/db_interface.cpp
+
+# Merge master into branch
+git checkout ${BRANCH_NAME}
+git merge master
+
+# Checkout commit at specified time stamp
+git checkout `git rev-list -n 1 --before="2019-06-17 12:00" master`

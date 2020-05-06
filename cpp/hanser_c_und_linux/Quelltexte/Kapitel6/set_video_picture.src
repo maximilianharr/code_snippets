@@ -1,0 +1,20 @@
+   {
+    struct video_picture video_pict;
+
+    if (ioctl(fd, VIDIOCGPICT, &video_pict) == -1)
+     {
+      perror("Can't get video picture information");
+      return(1);
+     }
+
+    video_pict.brightness = 39321;  /* 60% Helligkeit */
+    video_pict.contrast = 26214;    /* 40% Kontrast */
+    video_pict.depth = 24;
+    video_pict.palette = VIDEO_PALETTE_RGB24;
+
+    if (ioctl(fd, VIDIOCSPICT, &video_pict) == -1)
+     {
+      perror("Can't set video picture information");
+      return(1);
+     }
+   }

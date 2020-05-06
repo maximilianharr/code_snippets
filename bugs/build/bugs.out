@@ -1,0 +1,14 @@
+\BOOKMARK [2][-]{subsection.0.1}{example bug}{}% 1
+\BOOKMARK [1][-]{section.1}{Cpp Bugs}{}% 2
+\BOOKMARK [2][-]{subsection.1.1}{Eigen/Core not found}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{GIT Bugs}{}% 4
+\BOOKMARK [1][-]{section.3}{Java Bugs}{}% 5
+\BOOKMARK [1][-]{section.4}{Matlab Bugs}{}% 6
+\BOOKMARK [1][-]{section.5}{Simulink/DSpace Bugs}{}% 7
+\BOOKMARK [1][-]{section.6}{Octave Bugs}{}% 8
+\BOOKMARK [1][-]{section.7}{Python Bugs}{}% 9
+\BOOKMARK [1][-]{section.8}{ROS Bugs}{}% 10
+\BOOKMARK [2][-]{subsection.8.1}{QInotifyFileSystemWatcherEngine::addPaths: inotify\137add\137watch failed: No space left on device}{section.8}% 11
+\BOOKMARK [2][-]{subsection.8.2}{genmsg.msg\137loader.MsgNotFound: Cannot locate message [Header]: unknown package [std\137msgs] on search path}{section.8}% 12
+\BOOKMARK [2][-]{subsection.8.3}{CMake Error: The current CMakeCache.txt directory ...}{section.8}% 13
+\BOOKMARK [3][-]{subsubsection.8.3.1}{fatal error: opencv2/core.hpp: No such file or directory}{subsection.8.3}% 14
