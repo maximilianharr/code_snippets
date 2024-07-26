@@ -1,7 +1,0 @@
-
-# General
-git config --global core.autoclrf false
-
-# Personal
-git config --global user.name Max Mustermann
-git config --global user.email max.mustermann@opel.com
